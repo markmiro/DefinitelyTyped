@@ -604,7 +604,7 @@ export function useStore<S = RootStateOrAny, A extends Action = AnyAction>(): St
  * @param Context passed to your `<Provider>`.
  * @returns A `useSelector` hook bound to the specified context.
  */
-export function createSelectorHook(context?: Context<ReactReduxContextValue>): typeof useSelector;
+export function createSelectorHook(context?: Context<ReactReduxContextValue | null>): typeof useSelector;
 
 /**
  * Hook factory, which creates a `useStore` hook bound to a given context.
@@ -612,7 +612,7 @@ export function createSelectorHook(context?: Context<ReactReduxContextValue>): t
  * @param Context passed to your `<Provider>`.
  * @returns A `useStore` hook bound to the specified context.
  */
-export function createStoreHook(context?: Context<ReactReduxContextValue>): typeof useStore;
+export function createStoreHook(context?: Context<ReactReduxContextValue | null>): typeof useStore;
 
 /**
  * Hook factory, which creates a `useDispatch` hook bound to a given context.
@@ -620,6 +620,6 @@ export function createStoreHook(context?: Context<ReactReduxContextValue>): type
  * @param Context passed to your `<Provider>`.
  * @returns A `useDispatch` hook bound to the specified context.
  */
-export function createDispatchHook(context?: Context<ReactReduxContextValue>): typeof useDispatch;
+export function createDispatchHook(context?: Context<ReactReduxContextValue | null>): typeof useDispatch;
 
 // tslint:enable:no-unnecessary-generics
